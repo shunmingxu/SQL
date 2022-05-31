@@ -1,0 +1,25 @@
+*Create a sport shop database
+
+CREATE TABLE sports_shop (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, items_sold INTEGER);
+
+INSERT INTO sports_shop VALUES (1, "basketballs", 25, 30, 6);
+INSERT INTO sports_shop VALUES (2, "baseballs", 30, 8, 4);
+INSERT INTO sports_shop VALUES (3, "footballs", 35, 25, 10);
+INSERT INTO sports_shop VALUES (4, "baseball bats", 40, 20, 8);
+INSERT INTO sports_shop VALUES (5, "baseball mitts", 26, 25, 7);
+INSERT INTO sports_shop VALUES (6, "basketball hoops", 9, 150, 1);
+INSERT INTO sports_shop VALUES (7, "headbands", 33, 3, 9);
+INSERT INTO sports_shop VALUES (8, "men's bicycles", 50, 300, 90);
+INSERT INTO sports_shop VALUES (9, "women's bicycle", 35, 250, 40);
+INSERT INTO sports_shop VALUES (10, "kid's bicycle", 60, 100, 58);
+INSERT INTO sports_shop VALUES (11, "adult helmet", 100, 40, 95);
+INSERT INTO sports_shop VALUES (12, "kid's helmet", 120, 30, 130);
+INSERT INTO sports_shop VALUES (13, "bowling balls", 48, 47, 27);
+INSERT INTO sports_shop VALUES (14, "bowling shoes", 68, 30, 15);
+INSERT INTO sports_shop VALUES (15, "duffle bag", 89, 25, 66);
+
+*displayed the database ordered by price
+SELECT * from sports_shop order by price;
+
+*What items sold over 20 units?
+SELECT * from sports_shop WHERE items_sold > 20 order  by items_sold

@@ -23,9 +23,11 @@ INSERT INTO songs (title, artist, mood, duration, released)
 INSERT INTO songs (title, artist, mood, duration, released)
     VALUES ("Call me maybe", "Carly Rae Jepsen", "happy", 193, 2011);
     
-    
+**displayed the database by song titles   
 Select title from songs;
 
+**displayed database by title that is "epic" or released after 1990
 select title from songs where (mood="epic" or released>1990);
 
+**displayed database by title that is "epic and released after 1990 and less than 4 mins long 
 select title from songs where (mood="epic" and released>1990 and duration<240);

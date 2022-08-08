@@ -1,0 +1,22 @@
+#Karaoke Challenge
+
+**displayed the database by song titles  
+Select title from songs;
+
+**displayed database by title that is "epic" or released after 1990
+select title from songs where (mood="epic" or released>1990);
+
+**displayed database by title that is "epic and released after 1990 and less than 4 mins long 
+select title from songs where (mood="epic" and released>1990 and duration<240);
+
+##Playlist Maker Challenge
+
+**displayed database by songs by the artist "Queen"
+Select title from songs where (artist="Queen");
+
+**displayed database by artist from "Pop" genre
+select name from artists where (genre="Pop");
+
+**displayed database by title of songs from "Pop" artist using IN function with subquery
+select title from songs where artist in (select name from artists where (genre="Pop"));
+

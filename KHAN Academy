@@ -20,3 +20,10 @@ select name from artists where (genre="Pop");
 **displayed database by title of songs from "Pop" artist using IN function with subquery
 select title from songs where artist in (select name from artists where (genre="Pop"));
 
+###The Wordiest Author challenge
+
+**displayed database showing authors with total word count over set number
+select author, sum(words) as total_words from books group by author HAVING total_words >1000000;
+
+**displayed database by showing authors using average word count
+select author, AVG(words) as avg_words from books group by author having avg_words >150000;

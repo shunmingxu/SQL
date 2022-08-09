@@ -19,13 +19,36 @@ Where inv.BillingCountry = 'Brazil';
 SELECT * FROM chinook.employees
 WHERE Title = 'Sales Support Agent';
 
+#5-Find a unique/distinct list of billing countries from the Invoice table.
+SELECT DISTINCT BillingCountry FROM chinook.invoices;
 
-Find a unique/distinct list of billing countries from the Invoice table.
-Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
-Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
-How many Invoices were there in 2009?
-What are the total sales for 2009?
-Write a query that includes the purchased track name with each invoice line item.
+#6-Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
+SELECT emp.LastName, emp.FirstName, inv.InvoiceId
+FROM chinook.employees emp
+JOIN chinook.customers cust 
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.invoices inv
+ON inv.CustomerId = cust.CustomerId;
+
+#7-Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
+SELECT emp.LastName, emp.FirstName, cust.FirstName, cust.LastName, cust.Country, inv.Total
+FROM chinook.employees emp
+JOIN chinook.customers cust 
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.invoices inv
+ON inv.CustomerId = cust.CustomerId;
+
+#8-How many Invoices were there in 2009?
+SELECT COUNT(*) FROM chinook.invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+#9-What are the total sales for 2009?
+SELECT SUM(Total) FROM chinook.invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+#10-Write a query that includes the purchased track name with each invoice line item.
+
+
 Write a query that includes the purchased track name AND artist name with each invoice line item.
 Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 Show the total sales made by each sales agent.

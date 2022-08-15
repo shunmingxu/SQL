@@ -47,9 +47,23 @@ SELECT SUM(Total) FROM chinook.invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
 #10-Write a query that includes the purchased track name with each invoice line item.
+SELECT t.name, i.InvoiceLineId
+FROM chinook.invoice_items i
+JOIN chinook.tracks t ON t.TrackId=i.TrackId;
+
+#11-Write a query that includes the purchased track name AND artist name with each invoice line item.
+SELECT t.name, t.Composer, i.InvoiceLineId
+FROM chinook.invoice_items i
+JOIN chinook.tracks t ON t.TrackId=i.TrackId;
+
+#12-Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+SELECT t.Name as 'Track Name', a.title as 'Album Title', m.name as 'Media Type', g.name as 'Genre'
+FROM chinook.tracks t
+JOIN chinook.albums a ON a.AlbumId=t.AlbumId
+JOIN chinook.media_types m ON m.MediaTypeId=t.MediaTypeId
+JOIN chinook.genres g ON g.GenreId=t.GenreId;
+
+#13-Show the total sales made by each sales agent.
 
 
-Write a query that includes the purchased track name AND artist name with each invoice line item.
-Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
-Show the total sales made by each sales agent.
 Which sales agent made the most in sales in 2009?

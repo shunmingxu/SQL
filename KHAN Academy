@@ -42,3 +42,14 @@ SELECT COUNT(*),
         ELSE "F"
     END AS "letter_grade"
 FROM student_grades
+
+##### Dynamic Documents
+UPDATE documents SET author = 'Jackie Draper'
+WHERE author = 'Jackie Paper';
+
+SELECT * FROM documents;
+
+DELETE FROM documents WHERE id =5;
+
+SELECT * FROM documents;
+

@@ -53,3 +53,18 @@ DELETE FROM documents WHERE id =5;
 
 SELECT * FROM documents;
 
+###### Clothing Alteration
+ALTER TABLE clothes ADD price INTEGER;
+
+SELECT * FROM clothes;
+
+UPDATE clothes SET price = 10 WHERE id=1;
+UPDATE clothes SET price = 20 WHERE id=2;
+UPDATE clothes SET price = 30 WHERE id=3;
+
+SELECT * FROM clothes;
+
+INSERT INTO clothes (type, design, price)
+VALUES ('t-shirt', 'solid black', 15);
+
+SELECT * FROM clothes;
